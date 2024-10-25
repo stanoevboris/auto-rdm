@@ -1,0 +1,68 @@
+# please carefully chose your type. ML experiments will be run based on the pipeline type value
+denormalization:
+  denormalization_woe_smote:
+    - name: 'rdm.custom_transformers.woe.WOEEncoder'
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.SMOTE' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+          k_neighbors: 5
+  denormalization_woe_ros:
+    - name: 'rdm.custom_transformers.woe.WOEEncoder'
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.RandomOverSampler' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+wordification:
+  wordification_tfidf_smote:
+    - name: 'sklearn.feature_extraction.text.TfidfVectorizer'
+      params:
+        max_features: 5000
+        binary: True
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.SMOTE' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+          k_neighbors: 5
+  wordification_tfidf_ros:
+    - name: 'sklearn.feature_extraction.text.TfidfVectorizer'
+      params:
+        max_features: 5000
+        binary: True
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.RandomOverSampler' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+  wordification_MiniLM-L6-v2_smote:
+    - name: 'rdm.custom_transformers.sentence_transformer_encoder.SentenceTransformerEncoder'
+      params:
+        model_name: all-MiniLM-L6-v2
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.SMOTE' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+          k_neighbors: 5
+  wordification_MiniLM-L6-v2_ros:
+    - name: 'rdm.custom_transformers.sentence_transformer_encoder.SentenceTransformerEncoder'
+      params:
+        model_name: all-MiniLM-L6-v2
+    - name: 'rdm.custom_transformers.conditional_resampler.ConditionalResampler'
+      params:
+        resampler_class_name: 'imblearn.over_sampling.RandomOverSampler' #'imblearn.combine import SMOTEENN'
+        imbalance_threshold: 0.3
+        resampler_params:
+          sampling_strategy: 'auto'
+#  wordification_MiniLM-L12-v2:
+#    - name: 'rdm.custom_transformers.sentence_transformer_encoder.SentenceTransformerEncoder'
+#      params:
+#        model_name: all-MiniLM-L12-v2
