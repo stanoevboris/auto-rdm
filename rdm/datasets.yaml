@@ -10,7 +10,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: kinematics_data #approved with predictive features
+      target_schema: kinematics_data 
       target_table: target_table
       target_column: activity
       include_all_schemas: false
@@ -18,7 +18,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: room_occupancy # the data sometimes doesn't contain predictive features
+      target_schema: room_occupancy 
       target_table: original_table
       target_column: Room_Occupancy_Count
       include_all_schemas: false
@@ -26,7 +26,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: mobile_imu_activity_recognition # 0 IV values for all the columns
+      target_schema: mobile_imu_activity_recognition 
       target_table: original_table
       target_column: Activity
       include_all_schemas: false
@@ -34,7 +34,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: credit_exp3 # this dataset is okay
+      target_schema: credit_exp3 
       target_table: target
       target_column: class
       include_all_schemas: false
@@ -42,7 +42,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: telco_churn_exp2 # this dataset contains very low IV
+      target_schema: telco_churn_exp2 
       target_table: customer
       target_column: Churn
       include_all_schemas: false
@@ -50,7 +50,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: mushroom_exp2 # this dataset is okay
+      target_schema: mushroom_exp2 
       target_table: mushroom
       target_column: class
       include_all_schemas: false
@@ -58,7 +58,7 @@ datasets:
 
     - sql_type: mssql
       database: woe
-      target_schema: bank_marketing_exp2 # this dataset is okay
+      target_schema: bank_marketing_exp2 
       target_table: target
       target_column: Class
       include_all_schemas: false
@@ -82,7 +82,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: trains # this is okay
+      target_schema: trains 
       target_table: trains
       target_column: direction
       include_all_schemas: false
@@ -106,7 +106,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: imdb_ijs # sometimes contains low IV values
+      target_schema: imdb_ijs 
       target_table: movies
       target_column: label
       include_all_schemas: false
@@ -114,7 +114,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: imdb_MovieLens # contains very low IV values
+      target_schema: imdb_MovieLens 
       target_table: users
       target_column: u_gender
       include_all_schemas: false
@@ -122,19 +122,19 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: mutagenesis # this data is okay
+      target_schema: mutagenesis 
       target_table: molecule
       target_column: mutagenic
       include_all_schemas: false
-      enabled: false # finished
+      enabled: false 
 
     - sql_type: mysql
       database: null
-      target_schema: financial # this dataset looks okay
+      target_schema: financial 
       target_table: loan
       target_column: status
       include_all_schemas: false
-      enabled: false #finished
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -146,7 +146,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: ftp # sometimes doesn't contain predictive values
+      target_schema: ftp 
       target_table: session
       target_column: gender
       include_all_schemas: false
@@ -154,7 +154,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: PTE # very large dataset
+      target_schema: PTE 
       target_table: pte_active
       target_column: is_active
       include_all_schemas: false
@@ -162,7 +162,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: NCAA # very large dataset
+      target_schema: NCAA 
       target_table: target
       target_column: team_id1_wins
       include_all_schemas: false
@@ -170,7 +170,7 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: UTube # excluded this data set since this the least populated label has 4 records < n_folds 10
+      target_schema: UTube 
       target_table: utube_states
       target_column: class
       include_all_schemas: false
@@ -178,11 +178,11 @@ datasets:
 
     - sql_type: mysql
       database: null
-      target_schema: MuskLarge #/ MuskSmall
+      target_schema: MuskLarge 
       target_table: molecule
       target_column: class
       include_all_schemas: false
-      enabled: true # this is okay dataset
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -190,7 +190,7 @@ datasets:
       target_table: molecule
       target_column: class
       include_all_schemas: false
-      enabled: true # this is okay dataset
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -198,7 +198,7 @@ datasets:
       target_table: sentences
       target_column: class
       include_all_schemas: false
-      enabled: true # this is okay dataset
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -206,7 +206,7 @@ datasets:
       target_table: pima
       target_column: arg2
       include_all_schemas: false
-      enabled: false # no words for wordification we will exclude this dataset
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -214,7 +214,7 @@ datasets:
       target_table: molecule
       target_column: label
       include_all_schemas: false
-      enabled: true # this dataset is okay
+      enabled: false 
 
     - sql_type: mysql
       database: null
@@ -222,7 +222,7 @@ datasets:
       target_table: canc
       target_column: class
       include_all_schemas: false
-      enabled: true #big dataset ~50M records
+      enabled: false 
 
 
   multiclass_classification:
